@@ -11,24 +11,17 @@
 |
 */
 
-// 测试命令：php artisan route:list
+// 查看命令：php artisan help make:controller
+
+//1. 创建控制器及模型: php artisan make:controller PostController --model=Post
+
+//2. 创建表命令:php artisan make:migration create_posts_table --create=posts
+
+//3.执行：php artisan migrate
+
 
 /*Route::get('/', function () {
     return view('welcome');
 });*/
 
-/*Route::get('/', function () {
-    return view('welcome');
-})->name('dashboard');*/
-
-/*Route::name('dashboard')->get('/', function () {
-    return view('welcome');
-});*/
-
-/*Route::prefix('admin')->name('dashboard')->get('/', function () {
-    return view('welcome');
-});*/
-
-Route::prefix('admin')->middleware('admin')->name('dashboard')->get('/', function () {
-    return view('welcome');
-});
+Route::get('posts/{post}','PostController@show');
