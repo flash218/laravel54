@@ -25,3 +25,33 @@
 });*/
 
 Route::get('posts/{post}','PostController@show');
+
+/*Route::get('/',function() {
+    $posts = App\Post::all();
+    return $posts;
+});*/
+
+/*Route::get('/', function () {
+    $posts = App\Post::all();
+    return $posts->each(function ($post){
+        $post->archive();
+    });
+});*/
+
+/*Route::get('/', function () {
+    $posts = App\Post::all();
+    return $posts->each->publish();
+});*/
+
+/*Route::get('/', function () {
+    $posts = App\Post::all();
+    return $posts->map(function ($post){
+       return $post->title;
+    });
+});*/
+
+Route::get('/', function () {
+    $posts = App\Post::all();
+    return $posts->map->title;
+});
+
