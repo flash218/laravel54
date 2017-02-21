@@ -11,6 +11,24 @@
 |
 */
 
-Route::get('/', function () {
+// 测试命令：php artisan route:list
+
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
+
+/*Route::get('/', function () {
+    return view('welcome');
+})->name('dashboard');*/
+
+/*Route::name('dashboard')->get('/', function () {
+    return view('welcome');
+});*/
+
+/*Route::prefix('admin')->name('dashboard')->get('/', function () {
+    return view('welcome');
+});*/
+
+Route::prefix('admin')->middleware('admin')->name('dashboard')->get('/', function () {
     return view('welcome');
 });
