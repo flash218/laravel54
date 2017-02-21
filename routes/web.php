@@ -20,9 +20,9 @@
 //3.执行：php artisan migrate
 
 
-/*Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
-});*/
+});
 
 Route::get('posts/{post}','PostController@show');
 
@@ -50,8 +50,8 @@ Route::get('posts/{post}','PostController@show');
     });
 });*/
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     $posts = App\Post::all();
     return $posts->map->title;
-});
+});*/
 
